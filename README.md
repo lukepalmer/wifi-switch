@@ -7,7 +7,7 @@ I wanted to be able to control a load powered by a 12V battery via WiFi. It woul
 In my application a large 12V SLA battery is charged slowly by a solar panel. Occasionally I power up a large 1.5kW power inverter that's connected to a block heater. The inverter must be hardwired to the battery to handle this amount of power, but the internal inverter control circuitry can be switched with a reasonable amount of current (about 2A). 
 
 Some solutions exist for this (search ebay for 12V WiFi relay). I tried a few but unfortunately found that:
-* They waste lots of power at idle
+* They waste lots of power at idle, which is no good for solar
 * Control software was tempermental and unreliable
 
 Let's make one that doesn't suck.
@@ -26,7 +26,7 @@ The circuit is very simple and consists of:
 
 ### Schematic
 
-![Schematic](https://github.com/lukepalmer/wifi-switch/blob/master/schematic.png Schematic)
+![Schematic](https://github.com/lukepalmer/wifi-switch/blob/master/schematic.png)
 
 Brief description:
 * A small switching power supply with very low quiescent current is used to provide 3.3V directly to the D1 mini. The linear regulator on the D1 mini is bypassed.
