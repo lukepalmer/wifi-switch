@@ -35,3 +35,10 @@ Brief description:
 
 Note: The voltage divider must be connected directly to the ADC on the ESP8266 chip (A0) instead of the A0 pin on the D1 mini. This is because the D1 mini has an onboard voltage divider that is set up for 3.3v operation but we need to work with a full range of closer to 15V.
 
+### Build
+
+Here's what it looks like stuffed onto a protoboard. Nice and ugly.
+
+![Top](https://github.com/lukepalmer/wifi-switch/blob/master/top.jpg)
+![Bottom](https://github.com/lukepalmer/wifi-switch/blob/master/bottom.jpg)
+
