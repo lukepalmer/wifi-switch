@@ -209,7 +209,8 @@ void setup() {
 
   WiFiManager wifiManager;
   wifiManager.setSaveConfigCallback(saveConfigCallback);
-  WiFiManagerParameter custom_blynk_token("Blynk Token", "Blynk Token", blynk_token, 33);
+  // The first parameter, id, may not contain spaces nor special characters.
+  WiFiManagerParameter custom_blynk_token("blynk", "Blynk Token", blynk_token, 33);
   wifiManager.addParameter(&custom_blynk_token);
 
   if (digitalRead(PIN_WIFI_CONFIG) == LOW || !loaded_config) {
@@ -250,6 +251,7 @@ void setup() {
   BLYNK_LOG2("ESP Core: ", ESP.getCoreVersion());
   BLYNK_LOG2("ESP SDK: ", ESP.getSdkVersion());
 
+  BLYNK_LOG2("Starting Blynk with device token: ", blynk_token);
   Blynk.config(blynk_token);
   while (Blynk.connect() != true) {}
 
